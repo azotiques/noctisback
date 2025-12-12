@@ -1,11 +1,9 @@
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Navigate, Outlet, useRouter } from "@tanstack/react-router";
+import { Outlet } from "@tanstack/react-router";
 import Header from "./Header";
 import { queryClient } from "@/queryClient";
-import { supabase } from "@/supabaseClient";
-import { useEffect, useState } from "react";
 import { ThemeProvider } from "./ThemeProvider";
-import { AuthProvider, useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 
 export default function RootComponent() {
     const {user} = useAuth();

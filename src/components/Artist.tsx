@@ -1,13 +1,11 @@
 import { deleteEvent, editEvent } from "@/services/events";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Edit, EllipsisVertical, FlipHorizontal, LucideImageMinus, LucideMenu, Menu, MenuIcon, Trash } from "lucide-react";
+import { Edit, EllipsisVertical, Trash } from "lucide-react";
 import { useState } from "react";
-import { Field, FieldGroup, FieldLabel, FieldSet } from "./ui/field";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Label } from "./ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Textarea } from "./ui/textarea";
 
@@ -18,7 +16,7 @@ export default function Artist(props: {id: string, artist: string, description: 
 
     const qc = useQueryClient();
 
-    const {mutate: editEvents, error: editError} = useMutation(
+    const {mutate: editEvents} = useMutation(
         {
           mutationFn: editEvent,
           onSuccess: () => {
@@ -27,7 +25,7 @@ export default function Artist(props: {id: string, artist: string, description: 
         }
       )
 
-    const {mutate: deleteEvents, error: deleteError} = useMutation(
+    const {mutate: deleteEvents} = useMutation(
       {
         mutationFn: deleteEvent,
         onSuccess: () => {
@@ -55,7 +53,7 @@ export default function Artist(props: {id: string, artist: string, description: 
                 <DropdownMenuItem asChild>
                     <DialogTrigger asChild>
                       <button className="flex items-center gap-2 w-full text-right">
-                        <span className="px-2 py-1.5 text-sm font-medium data-[inset]:pl-8">Edit</span>
+                        <span className="px-2 py-1.5 text-sm font-medium data-inset:pl-8">Edit</span>
                         <Edit />
                       </button>
                     </DialogTrigger>

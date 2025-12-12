@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
+import { Plus } from "lucide-react";
 
 export default function AddArtist() {
     const [artist, setArtist] = useState<string>("");
@@ -14,7 +15,7 @@ export default function AddArtist() {
 
     const qc = useQueryClient();
 
-    const {mutate: insertEvent, error: insertError} = useMutation(
+    const {mutate: insertEvent} = useMutation(
       {
         mutationFn: insertEvents,
         onSuccess: () => {

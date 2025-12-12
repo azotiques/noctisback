@@ -1,8 +1,4 @@
-import { Outlet, createRootRoute, useNavigate } from '@tanstack/react-router'
-
-import Header from '../components/Header'
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClient } from '@/queryClient'
+import { createRootRoute } from '@tanstack/react-router'
 import { supabase } from '@/supabaseClient'
 import RootComponent from '@/components/RootComponent'
 import { AuthProvider } from '@/context/AuthContext'
