@@ -1,7 +1,7 @@
 import { supabase } from "@/supabaseClient";
 import { useNavigate } from "@tanstack/react-router";
 import { Button } from "./ui/button";
-import { LogOut, PartyPopper, PartyPopperIcon } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Separator } from "./ui/separator";
 
 export default function Header() {
