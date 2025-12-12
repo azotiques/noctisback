@@ -1,14 +1,10 @@
-import { editEvent, insertEvents } from "@/services/events";
+import { insertEvents } from "@/services/events";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Edit, EllipsisVertical, FlipHorizontal, LucideImageMinus, LucideMenu, Menu, MenuIcon, Plus, Trash } from "lucide-react";
 import { useState } from "react";
-import { Field, FieldGroup, FieldLabel, FieldSet } from "./ui/field";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Label } from "./ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Textarea } from "./ui/textarea";
 
 export default function AddArtist() {

@@ -1,11 +1,8 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
-import {useMutation, useQuery} from '@tanstack/react-query';
-import logo from '../logo.svg'
-import { editEvent, getEvents, insertEvents } from '@/services/events'
+import { useQuery } from '@tanstack/react-query';
+import { getEvents } from '@/services/events'
 import Artist from '@/components/Artist';
 import AddArtist from "@/components/AddArtist"
-import { Separator } from '@/components/ui/separator';
-import { Loader, LoaderCircle } from 'lucide-react';
 import Loading from '@/components/Loading';
 
 export const Route = createFileRoute('/')({
@@ -13,7 +10,6 @@ export const Route = createFileRoute('/')({
     if(!context.user) {
       throw redirect({
         to: "/login",
-        search: {redirectTo: "/"},
       });
     }
   },
