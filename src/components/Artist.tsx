@@ -9,10 +9,11 @@ import { Label } from "./ui/label";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Textarea } from "./ui/textarea";
 
-export default function Artist(props: {id: string, artist: string, description: string, image: string}) {
+export default function Artist(props: {id: string, artist: string, description: string, image: string, link: string}) {
     const [artist, setArtist] = useState<string>(props.artist);
     const [description, setDescription] = useState<string>(props.description);
     const [image, setImage] = useState<string>(props.image);
+    const [link, setLink] = useState<string>(props.link);
 
     const qc = useQueryClient();
 
@@ -36,7 +37,7 @@ export default function Artist(props: {id: string, artist: string, description: 
 
     const handleEditSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-      editEvents({id: props.id, artist, description, image})
+      editEvents({id: props.id, artist, description, image, link})
     }
 
     return <>
@@ -85,6 +86,10 @@ export default function Artist(props: {id: string, artist: string, description: 
                 <div className="flex flex-col gap-y-2">
                   <Label>Image</Label>
                   <Input value={image} onChange={(e) => setImage(e.target.value)}/>
+                </div>
+                <div className="flex flex-col gap-y-2">
+                  <Label>Link</Label>
+                  <Input value={link} onChange={(e) => setLink(e.target.value)}/>
                 </div>
                  <DialogFooter>
                   <DialogClose asChild>

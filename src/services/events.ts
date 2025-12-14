@@ -10,6 +10,7 @@ export async function insertEvents(values: {
     artist: string;
     description: string;
     image: string;
+    link: string;
 }) {
     const {data, error} = await supabase.from('events').insert([
         values
@@ -23,13 +24,15 @@ export async function editEvent(values: {
     artist: string;
     description: string;
     image: string;
+    link: string;
 }) {
     
     const {data, error} = await supabase.from('events')
         .update({
             artist: values.artist,
             description: values.description,
-            image: values.image
+            image: values.image,
+            link: values.link
         })
         .eq("id", values.id)
         .select();

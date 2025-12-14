@@ -12,6 +12,7 @@ export default function AddArtist() {
     const [artist, setArtist] = useState<string>("");
     const [description, setDescription] = useState<string>("");
     const [image, setImage] = useState<string>("");
+    const [link, setLink] = useState<string>("");
 
     const qc = useQueryClient();
 
@@ -26,7 +27,7 @@ export default function AddArtist() {
 
     const handleInsertSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-      insertEvent({artist, description, image});
+      insertEvent({artist, description, image, link});
       setArtist("");
       setDescription("");
       setImage("");
@@ -57,6 +58,10 @@ export default function AddArtist() {
                 <div className="flex flex-col gap-y-2">
                   <Label>Image</Label>
                   <Input value={image} onChange={(e) => setImage(e.target.value)}/>
+                </div>
+                <div className="flex flex-col gap-y-2">
+                  <Label>Link</Label>
+                  <Input value={link} onChange={(e) => setLink(e.target.value)}/>
                 </div>
                  <DialogFooter>
                   <DialogClose asChild>

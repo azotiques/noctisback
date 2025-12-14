@@ -38,6 +38,7 @@ function App() {
                 artist={event.artist} 
                 description={event.description}
                 image={event.image}
+                link={event.link}
               />
             </>
           )
